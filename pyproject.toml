@@ -1,0 +1,13 @@
+# The `statute` pin is rewritten by the `mirror` job of the release workflow
+# in Luolc/agent-constitution, on every release tag. Do not edit it by hand.
+#
+# The distribution name cannot be `statute`: this package depends on the real
+# `statute` from PyPI, and a package cannot depend on itself.
+[project]
+name = "statute-pre-commit"
+version = "0.0.0"
+dependencies = ["statute==0.1.18"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
