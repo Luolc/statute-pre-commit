@@ -1,0 +1,21 @@
+# Hand-written; the release workflow never touches this file. Only the
+# `statute==` pin in pyproject.toml is generated.
+#
+# `language: python` is what makes this repository worth existing: pre-commit
+# has no "download a prebuilt binary" language, but it is itself written in
+# Python, so a Python environment is always at hand. `pip install .` here
+# pulls the statute wheel from PyPI, and that wheel carries the prebuilt
+# binary — no Rust toolchain, no compile.
+#
+# `--check` writes nothing: it fails, naming each file, when the committed
+# output differs from a fresh compile of statute.toml and statute.lock. The
+# hook compiles the whole repository, so no file names are passed to it, and
+# `files` only decides when it runs. `.pre-commit-config.yaml` is in it so
+# that a commit changing `rev` (and with it the statute version) runs it too.
+- id: statute-compile
+  name: statute compile check
+  description: Check that AGENTS.md and the files statute writes beside it match a fresh compile.
+  entry: statute compile --check
+  language: python
+  files: ^(statute\.(toml|lock)$|AGENTS\.md$|\.statute/|\.agents/|\.claude/|\.pre-commit-config\.yaml$)
+  pass_filenames: false
