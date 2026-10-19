@@ -1,5 +1,12 @@
 # statute-pre-commit
 
+> **This is an automated mirror and does not accept manual contributions.**
+> The statute version pin and the `v<version>` tags here are written only by
+> statute's release workflow in
+> [Luolc/agent-constitution](https://github.com/Luolc/agent-constitution).
+> To change statute itself or the version this hook installs, make the change
+> there.
+
 A [pre-commit](https://pre-commit.com/) hook for
 [statute](https://github.com/Luolc/agent-constitution), the command that
 compiles a constitution and the rules a repository chooses into the
