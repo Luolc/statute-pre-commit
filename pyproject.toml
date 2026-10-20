@@ -6,7 +6,7 @@
 [project]
 name = "statute-pre-commit"
 version = "0.0.0"
-dependencies = ["statute==0.1.25"]
+dependencies = ["statute==0.1.26"]
 
 [build-system]
 requires = ["setuptools>=61"]
